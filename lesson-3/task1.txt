@@ -1,0 +1,27 @@
+в файле task1.sql приведен полный вариант скрипта создания таблиц для vk в рамках задания 1 со 
+следующим дополнением: вводится таблица содержащая данные по постам (posts) и таблица ссылок на медиафайлы, прикрепленные
+к посту (media_posts). Предлагается простой вариант, когда пользователь может ввести текст и под ним разместить упорядоченный список 
+медиафайлов.
+
+Вот скрипты этих таблиц:
+
+-- Таблица постов
+DROP TABLE IF EXISTS posts;
+CREATE TABLE posts (
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT "Идентификатор строки",
+	user_id INT UNSIGNED NOT NULL COMMENT "Ссылка на пользователя - автора поста",
+	body TEXT NOT NULL COMMENT "Текст поста",
+	created_at DATETIME DEFAULT NOW() COMMENT "Время создания строки",
+  	updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT "Время обновления строки"
+) COMMENT "Посты";
+
+
+-- Таблица прикрепленных к посту медиа-файлов
+DROP TABLE IF EXISTS media_posts;
+CREATE TABLE media_posts (
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT "Идентификатор строки",
+	post_id INT UNSIGNED NOT NULL COMMENT "Ссылка на пост",
+	media_id INT UNSIGNED NOT NULL COMMENT "Ссылка на медиа файл",
+	order_val INT UNSIGNED NOT NULL COMMENT "Порядковый номер медиа файла в рамках поста", 
+	created_at DATETIME DEFAULT NOW() COMMENT "Время создания строки"
+) COMMENT "Прикрепленные к посту медиа файлы";
