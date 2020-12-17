@@ -1,0 +1,44 @@
+> use shop
+switched to db shop
+> db.shop.insert({name: 'Процессоры', type: 'catalog', _id: 1})
+WriteResult({ "nInserted" : 1 })
+> db.shop.find({_id: 1})
+{ "_id" : 1, "name" : "Процессоры", "type" : "catalog" }
+> db.shop.insert({name: 'Материнские платы', type: 'catalog', _id: 2})
+WriteResult({ "nInserted" : 1 })
+> db.shop.insert({name: 'Видеокарты', type: 'catalog', _id: 3})
+WriteResult({ "nInserted" : 1 })
+> db.shop.insert({name: 'Жесткие диски', type: 'catalog', _id: 4})
+WriteResult({ "nInserted" : 1 })
+> db.shop.insert({name: 'Оперативная память', type: 'catalog', _id: 5})
+WriteResult({ "nInserted" : 1 })
+> db.shop.find()
+{ "_id" : 1, "name" : "Процессоры", "type" : "catalog" }
+{ "_id" : 2, "name" : "Материнские платы", "type" : "catalog" }
+{ "_id" : 3, "name" : "Видеокарты", "type" : "catalog" }
+{ "_id" : 4, "name" : "Жесткие диски", "type" : "catalog" }
+{ "_id" : 5, "name" : "Оперативная память", "type" : "catalog" }
+> db.shop.insert({name: 'Intel Core i5-7400', type: 'product', catalog: 1, description:'Процессор для настольных персональных компьютеров, основанных на платформе Intel.', price: 12700.0})
+WriteResult({ "nInserted" : 1 })
+> db.shop.insert({name: 'AMD FX-8320E', type: 'product', catalog: 1, description:'Процессор для настольных персональных компьютеров, основанных на платформе AMD.', price: 4780.0})
+WriteResult({ "nInserted" : 1 })
+> db.shop.insert({name: 'AMD FX-8320', type: 'product', catalog: 1, description:'Процессор для настольных персональных компьютеров, основанных на платформе AMD.', price: 7120.0})
+WriteResult({ "nInserted" : 1 })
+> db.shop.insert({name: 'ASUS ROG MAXIMUS X HERO', type: 'product', catalog: 2, description:'Материнская плата ASUS ROG MAXIMUS X HERO, Z370, Socket 1151-V2, DDR4, ATX', price: 19310.0})
+WriteResult({ "nInserted" : 1 })
+> db.shop.insert({name: 'Gigabyte H310M S2H', type: 'product', catalog: 2, description:'Материнская плата Gigabyte H310M S2H, H310, Socket 1151-V2, DDR4, mATX', price: 4790.0})
+WriteResult({ "nInserted" : 1 })
+> db.shop.insert({name: 'MSI B250M GAMING PRO', type: 'product', catalog: 2, description:'Материнская плата MSI B250M GAMING PRO, B250, Socket 1151, DDR4, mATX', price: 5060.0})
+WriteResult({ "nInserted" : 1 })
+> db.shop.find()
+{ "_id" : 1, "name" : "Процессоры", "type" : "catalog" }
+{ "_id" : 2, "name" : "Материнские платы", "type" : "catalog" }
+{ "_id" : 3, "name" : "Видеокарты", "type" : "catalog" }
+{ "_id" : 4, "name" : "Жесткие диски", "type" : "catalog" }
+{ "_id" : 5, "name" : "Оперативная память", "type" : "catalog" }
+{ "_id" : ObjectId("5fdb908713e8caca97b050ab"), "name" : "Intel Core i5-7400", "type" : "product", "catalog" : 1, "description" : "Процессор для настольных персональных компьютеров, основанных на платформе Intel.", "price" : 12700 }
+{ "_id" : ObjectId("5fdb919413e8caca97b050ac"), "name" : "AMD FX-8320E", "type" : "product", "catalog" : 1, "description" : "Процессор для настольных персональных компьютеров, основанных на платформе AMD.", "price" : 4780 }
+{ "_id" : ObjectId("5fdb91a813e8caca97b050ad"), "name" : "AMD FX-8320", "type" : "product", "catalog" : 1, "description" : "Процессор для настольных персональных компьютеров, основанных на платформе AMD.", "price" : 7120 }
+{ "_id" : ObjectId("5fdb91b413e8caca97b050ae"), "name" : "ASUS ROG MAXIMUS X HERO", "type" : "product", "catalog" : 2, "description" : "Материнская плата ASUS ROG MAXIMUS X HERO, Z370, Socket 1151-V2, DDR4, ATX", "price" : 19310 }
+{ "_id" : ObjectId("5fdb91bd13e8caca97b050af"), "name" : "Gigabyte H310M S2H", "type" : "product", "catalog" : 2, "description" : "Материнская плата Gigabyte H310M S2H, H310, Socket 1151-V2, DDR4, mATX", "price" : 4790 }
+{ "_id" : ObjectId("5fdb91c513e8caca97b050b0"), "name" : "MSI B250M GAMING PRO", "type" : "product", "catalog" : 2, "description" : "Материнская плата MSI B250M GAMING PRO, B250, Socket 1151, DDR4, mATX", "price" : 5060 }
