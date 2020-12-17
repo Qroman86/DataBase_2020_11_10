@@ -1,0 +1,8 @@
+127.0.0.1:6379> HSET user_to_email "Roman Kudryavtsev" roman.kudr@gmail.com
+(integer) 1
+127.0.0.1:6379> HSET email_to_user roman.kudr@gmail.com "Roman Kudryavtsev"
+(integer) 1
+127.0.0.1:6379> HGET user_to_email "Roman Kudryavtsev"
+"roman.kudr@gmail.com"
+127.0.0.1:6379> HGET email_to_user roman.kudr@gmail.com
+"Roman Kudryavtsev"
